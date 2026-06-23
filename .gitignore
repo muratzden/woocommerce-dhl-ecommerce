@@ -1,0 +1,48 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+debug.log
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Build
+dist/
+build/
+
+# WordPress
+wp-content/debug.log
+
+# Testing
+phpunit.xml
+.phpunit.result.cache
+
+# Local storage
+storage/
+cache/
+tmp/
+
+# DHL / API exports
+exports/
+api-logs/
+request-dumps/
+response-dumps/
