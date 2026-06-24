@@ -1,50 +1,37 @@
 # DHL eCommerce for WooCommerce
 
-WooCommerce integration for DHL eCommerce / MNG Kargo APIs in Türkiye.
+Independent WooCommerce integration for DHL eCommerce / MNG Kargo APIs.
 
-Current release: `0.9.9-beta`.
+This plugin can prepare recipients, transfer WooCommerce orders, request DHL barcode labels, print A5/A4 reference labels, save ZPL data and synchronize shipment status emails.
+
+> This plugin is an independent integration and is not affiliated with, endorsed by, or sponsored by DHL eCommerce or MNG Kargo.
 
 ## Features
 
-- Create DHL/MNG shipment orders from WooCommerce orders.
-- Create barcode labels via Barcode Command API.
-- Independent DHL eCommerce admin menu in the WordPress left sidebar.
-- Independent DHL eCommerce card on WooCommerce order screens.
-- Custom order statuses:
-  - Kargoya verilmeye hazır
-  - Kargoya teslim edildi
-  - Varış şubesinde
-  - Dağıtımda
-- Automatic tracking sync through WordPress Cron.
-- Customer email notifications for shipment stages.
-- Delivered shipments automatically move WooCommerce orders to Completed.
-- Editable customer email templates.
-- Native WooCommerce email wrapper for all DHL customer shipment emails.
-- Delayed barcode queue after createOrder to avoid early 20011 barcode failures.
-- Plugin screen Settings link.
-- HPOS compatibility declaration.
+- Token connection test
+- Plus Command `createRecipient`
+- Standard Command `createOrder`
+- Barcode Command `createbarcode`
+- Reference barcode / shipment barcode distinction
+- A5/A4 label print screen
+- ZPL copy and download
+- WooCommerce-styled customer emails
+- Shipment tracking synchronization
+- HPOS compatibility declaration
 
-## Required API subscriptions
+## Installation
 
-Your Sandbox or Apizone app must be subscribed to:
+1. Upload the plugin folder to `wp-content/plugins/` or install the ZIP from WordPress Admin.
+2. Activate the plugin.
+3. Open **DHL eCommerce** from the WordPress admin menu.
+4. Enter the API credentials.
+5. Test the token connection.
+6. Configure labels and email templates.
 
-- Identity API
-- Standard Command API
-- Barcode Command API
-- Standard Query API
+## Security
 
-## Setup links
+Do not commit real customer numbers, API passwords, Client Secrets, JWT tokens, API logs, request dumps or response dumps.
 
-- Sandbox: https://sandbox.mngkargo.com.tr/
-- Apizone: https://apizone.mngkargo.com.tr/
+## License
 
-## Notes
-
-The plugin does not receive push/webhook events from DHL/MNG. It checks shipment status with `getshipmentstatus` periodically using WordPress Cron.
-
-
-## Barcode Lifecycle
-
-When a WooCommerce order is sent to DHL eCommerce/MNG, the plugin does not call the Barcode Command API immediately. It schedules barcode creation after a delay because live API logs showed `createOrder` and `createbarcode` were being called within milliseconds, which can trigger `20011` before the order is ready. If DHL still returns `20011`, the plugin retries automatically up to five times.
-
-The plugin also adds DHL reference, shipment number and barcode metadata to WooCommerce order emails through WooCommerce email hooks. DHL shipment emails now use the native WooCommerce email header, footer, styling and order/customer detail hooks, so store logo and colors should be managed from WooCommerce email settings instead of plugin-specific visual settings.
+GPLv2 or later.
