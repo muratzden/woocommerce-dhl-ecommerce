@@ -3,7 +3,7 @@
  * Plugin Name: ShipPilot for WooCommerce
  * Plugin URI: https://github.com/muratzden/shippilot-for-woocommerce
  * Description: Independent WooCommerce shipping integration for DHL eCommerce / MNG Kargo services: recipient preparation, order transfer, barcode generation, tracking sync and customer emails.
- * Version: 1.1.8
+ * Version: 1.1.9
  * Author: Murat Özden
  * Author URI: https://profiles.wordpress.org/muratzden/
  * Text Domain: shippilot-for-woocommerce
@@ -17,7 +17,7 @@
 
 if (!defined('ABSPATH')) { exit; }
 
-define('DHLWC_VERSION', '1.1.8');
+define('DHLWC_VERSION', '1.1.9');
 define('DHLWC_FILE', __FILE__);
 define('DHLWC_DIR', plugin_dir_path(__FILE__));
 define('DHLWC_URL', plugin_dir_url(__FILE__));

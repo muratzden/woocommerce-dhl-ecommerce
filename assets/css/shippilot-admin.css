@@ -1,0 +1,17 @@
+.dhlwc-box {
+	border: 1px solid #dcdcde;
+	padding: 12px;
+	background: #fff;
+	margin: 10px 0;
+}
+
+.dhlwc-box p {
+	margin: 6px 0;
+}
+
+.dhlwc-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 10px;
+}

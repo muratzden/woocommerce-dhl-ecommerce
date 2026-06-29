@@ -25,14 +25,16 @@ final class DHLWC_Admin {
 	}
 
 	public function register_settings() {
-	register_setting(
-		'dhlwc_settings_group',
-		DHLWC_Constants::OPTION_KEY,
-		array(
-			'sanitize_callback' => array( 'DHLWC_Settings', 'sanitize' ),
-		)
-	);
-}
+		register_setting(
+			'dhlwc_settings_group',
+			DHLWC_Constants::OPTION_KEY,
+			array(
+				'type'              => 'array',
+				'sanitize_callback' => array( 'DHLWC_Settings', 'sanitize' ),
+				'default'           => array(),
+			)
+		);
+	}
 
 	public function plugin_action_links( $links ) {
 		array_unshift(

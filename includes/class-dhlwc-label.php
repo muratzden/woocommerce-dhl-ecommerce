@@ -196,7 +196,12 @@ final class DHLWC_Label {
 <head>
 <meta charset="<?php echo esc_attr(get_bloginfo('charset')); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php echo esc_html(sprintf(__('Shipping Label - %s', 'shippilot-for-woocommerce'), $data['reference'])); ?></title>
+<title>
+	<?php
+	/* translators: %s: Shipment reference number. */
+	echo esc_html( sprintf( __( 'Shipping Label - %s', 'shippilot-for-woocommerce' ), $data['reference'] ) );
+	?>
+</title>
 <?php wp_print_styles(array('shippilot-label')); ?>
 </head>
 <body class="paper-a5 landscape">

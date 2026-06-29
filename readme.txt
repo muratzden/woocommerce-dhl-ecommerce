@@ -4,7 +4,7 @@ Tags: woocommerce, shipping, shipment tracking, logistics, barcode
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,9 @@ Shipping integration plugin for WooCommerce with shipment creation, label genera
 
 == Description ==
 
-ShipPilot is an independent WooCommerce shipping integration that supports DHL eCommerce / MNG Kargo services for shipment creation, barcode generation, label printing, tracking synchronization and customer notifications.
+ShipPilot for WooCommerce is an independent shipping integration plugin that enables merchants to create shipments, print shipping labels, synchronize tracking information and automate shipping workflows using supported carrier APIs.
+
+Documentation: https://muratzden.github.io/shippilot-for-woocommerce/
 
 Disclaimer:
 
@@ -33,32 +35,40 @@ Main features:
 
 == External Services ==
 
-ShipPilot connects to the DHL eCommerce / MNG Kargo API to create shipments, generate barcodes, retrieve shipping labels and synchronize shipment tracking.
+This plugin connects to external shipping carrier APIs only when the merchant initiates a shipping operation.
 
-Data sent:
+Service provider:
+DHL eCommerce / MNG Kargo
 
-* API credentials configured by the merchant (authentication)
-* Recipient name, address and contact information
-* Shipment and order information required to create shipments
-* Shipment tracking requests
+Purpose of the connection:
 
-This data is transmitted only when the merchant performs shipping operations.
+* Shipment creation
+* Shipping label generation
+* Barcode retrieval
+* Shipment tracking synchronization
 
-Service Provider:
-DHL eCommerce / MNG Kargo Shipping Services
+Data transmitted:
+
+* API authentication credentials
+* Recipient name and address
+* Shipment information
+* Tracking requests
 
 Terms of Service:
-https://www.mngkargo.com.tr/
+https://muratzden.github.io/shippilot-for-woocommerce/terms.html
 
 Privacy Policy:
-https://www.mngkargo.com.tr/gizlilik-politikasi
+https://muratzden.github.io/shippilot-for-woocommerce/privacy-policy.html
 
 == Requirements ==
 
 * WordPress 6.0 or newer.
 * WooCommerce 7.0 or newer.
 * PHP 7.4 or newer.
-* Active API credentials for DHL eCommerce / MNG Kargo shipping services.
+* Active API credentials for a supported shipping provider.
+
+Currently supported provider:
+* DHL eCommerce / MNG Kargo
 * Required API subscriptions in Sandbox or Apizone: Identity, Plus Command, Standard Command, Standard Query and Barcode Command.
 
 == Installation ==
@@ -66,7 +76,7 @@ https://www.mngkargo.com.tr/gizlilik-politikasi
 1. Upload the plugin folder to `/wp-content/plugins/` or install the ZIP from WordPress Admin > Plugins > Add New.
 2. Activate the plugin.
 3. Open ShipPilot from the WordPress admin menu.
-4. Enter environment, customer number, API password, Client ID and Client Secret.
+4. Enter your shipping provider API credentials.
 5. Click Token Connection Test.
 6. Configure label and email settings.
 7. Open a WooCommerce order and use the ShipPilot shipment panel.
@@ -90,6 +100,16 @@ No. DHL may return a reference / order barcode ZPL when the final shipment barco
 Yes. The plugin includes an A5/A4 label print screen and can download the original ZPL returned by DHL.
 
 == Changelog ==
+
+= 1.1.9 =
+* Fixed WordPress.org review issues.
+* Added documentation pages.
+* Improved settings sanitization.
+* Refactored label rendering.
+* Removed inline JavaScript.
+* Removed inline CSS.
+* Updated external service documentation.
+* Added GitHub Pages documentation.
 
 = 1.1.8 =
 * Hardened WordPress.org metadata.

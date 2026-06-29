@@ -21,14 +21,16 @@ final class DHLWC_Orders {
 			'shippilot-admin-order-box',
 			false,
 			array(),
-			'1.1.8'
+			'1.1.9'
 		);
 
 		wp_enqueue_style( 'shippilot-admin-order-box' );
 
-		wp_add_inline_style(
-			'shippilot-admin-order-box',
-			'#dhlwc_order_box .dhlwc-order-actions,#dhlwc_order_box_hpos .dhlwc-order-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important;margin-top:12px!important;}#dhlwc_order_box .dhlwc-action-button,#dhlwc_order_box_hpos .dhlwc-action-button{width:100%;text-align:center;box-sizing:border-box;min-height:32px;line-height:30px;padding:0 6px;}#dhlwc_order_box .dhlwc-full-button,#dhlwc_order_box_hpos .dhlwc-full-button{display:block;width:100%;}#dhlwc_order_box .dhlwc-tracking-action,#dhlwc_order_box_hpos .dhlwc-tracking-action{margin-top:8px;}'
+		wp_enqueue_style(
+			'shippilot-admin',
+			DHLWC_URL . 'assets/css/shippilot-admin.css',
+			array(),
+			DHLWC_VERSION
 		);
 	}
 
